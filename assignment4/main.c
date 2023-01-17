@@ -20,6 +20,8 @@ float xrot = 0.0f;
 float yrot = 0.0f;
 
 int modoLuz = 1;
+float zCam = 0.001;
+float yCam = 10.0;
 
 void desenhaPlanetas() {
 	
@@ -45,7 +47,7 @@ void display(void)
 	
 	glMatrixMode(GL_MODELVIEW);
 	gluLookAt(
-	0.0f, 15.0f, 0.01f,
+	0.0f, 25.0f, zCam,
 	0.0f, 0.0f, 0.0f,
 	0.0f, 1.0f, 0.0f);
 
@@ -71,13 +73,13 @@ void resize(int w, int h)
 
 
 void configuraLuz(){
-    if(modoLuz == 1){
-        GLfloat mat_specular[] = { 1.0, 1.0, 1.0, 1.0 };
+	GLfloat mat_specular[] = { 1.0, 1.0, 1.0, 1.0 };
         GLfloat mat_shininess[] = { 10.0 };
-        GLfloat light_position[] = { 0.1, 0.1, 0.1, 0 };
+        GLfloat light_position[] = { 0,0,0 };
 		GLfloat white_light[] = { 1.0, 1.0, 1.0, 1.0 };
 		GLfloat lmodel_ambient[] = { 0.1, 0.1, 0.1, 1.0};
 		glClearColor(0.0, 0.0, 0.0, 0.0);
+        
         glShadeModel (GL_SMOOTH);
 
         glMaterialfv(GL_FRONT, GL_SPECULAR, mat_specular);
@@ -88,14 +90,11 @@ void configuraLuz(){
 		glLightfv(GL_LIGHT0, GL_SPECULAR, white_light);
 		glLightModelfv(GL_LIGHT_MODEL_AMBIENT, lmodel_ambient);
 
+
         glEnable(GL_LIGHTING);
         glEnable(GL_LIGHT0);
         glEnable(GL_DEPTH_TEST);
 		glEnable(GL_COLOR_MATERIAL);
-    }  else {
-        glDisable(GL_LIGHTING);
-        glDisable(GL_LIGHT0);
-    }
 }
 
 
@@ -108,6 +107,10 @@ void moveItems() {
 	moveUranus();
 	moveVenus();
 	moveEarth();
+
+	if(zCam < 25)
+		zCam = zCam + 0.1;
+	
 	
 	configuraLuz();
 	glutPostRedisplay();

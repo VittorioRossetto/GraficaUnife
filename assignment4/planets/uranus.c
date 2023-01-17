@@ -4,8 +4,8 @@ GLUquadricObj *obj_uranus = NULL;
 GLuint idTextureuranus;
 
 const float uranus_ray = 0.5;
-const float uranus_distance = 8.5;
-const float uranus_veloc = 70;//0 a 1000
+const float uranus_distance = 17.5;
+const float uranus_veloc = 50;//0 a 1000
 
 float uranus_ang = 0.0;
 float uranus_rotate = 0.0;

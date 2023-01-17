@@ -3,9 +3,9 @@
 GLUquadricObj *obj_neptune = NULL;
 GLuint idTextureneptune;
 
-const float neptune_ray = 0.2;
-const float neptune_distance = 9.5;
-const float neptune_veloc = 40;//0 a 1000
+const float neptune_ray = 0.5;
+const float neptune_distance = 20;
+const float neptune_veloc = 50;//0 a 1000
 
 float neptune_ang = 0.0;
 float neptune_rotate = 0.0;

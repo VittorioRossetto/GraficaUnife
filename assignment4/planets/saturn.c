@@ -3,9 +3,9 @@
 GLUquadricObj *obj_saturn = NULL;
 GLuint idTexturesaturn;
 
-const float saturn_ray = 0.4;
-const float saturn_distance = 7.5;
-const float saturn_veloc = 100;//0 a 1000
+const float saturn_ray = 1.2;
+const float saturn_distance = 14.5;
+const float saturn_veloc = 90;//0 a 1000
 
 float saturn_ang = 0.0;
 float saturn_rotate = 0.0;

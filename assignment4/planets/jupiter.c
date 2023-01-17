@@ -3,9 +3,9 @@
 GLUquadricObj *obj_jupiter = NULL;
 GLuint idTextureJupiter;
 
-const float jupiter_ray = 1.0;
-const float jupiter_distance = 6.5;
-const float jupiter_veloc = 140;//0 a 1000
+const float jupiter_ray = 1.4;
+const float jupiter_distance = 11.5;
+const float jupiter_veloc = 130;//0 a 1000
 
 float jupiter_ang = 0.0;
 float jupiter_rotate = 0.0;

@@ -3,9 +3,9 @@
 GLUquadricObj *obj_earth = NULL;
 GLuint idTextureearth;
 
-const float earth_ray = 0.5;
-const float earth_distance = 4;
-const float earth_veloc = 200;//0 a 1000
+const float earth_ray = 0.3;
+const float earth_distance = 7;
+const float earth_veloc = 290;//0 a 1000
 
 float earth_ang = 0.0;
 float earth_rotate = 0.0;

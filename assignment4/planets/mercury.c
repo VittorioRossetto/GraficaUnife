@@ -3,9 +3,9 @@
 GLUquadricObj *obj_mercury = NULL;
 GLuint idTexturemercury;
 
-const float mercury_ray = 0.3;
-const float mercury_distance = 2;
-const float mercury_veloc = 1000;//0 a 1000
+const float mercury_ray = 0.2;
+const float mercury_distance = 3;
+const float mercury_veloc = 470;//0 a 1000
 
 float mercury_ang = 0.0;
 float mercury_rotate = 0.0;

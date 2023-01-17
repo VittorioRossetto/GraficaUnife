@@ -3,9 +3,9 @@
 GLUquadricObj *obj_mars = NULL;
 GLuint idTexturemars;
 
-const float mars_ray = 0.3;
-const float mars_distance = 5;
-const float mars_veloc = 170;//0 a 1000
+const float mars_ray = 0.15;
+const float mars_distance = 9;
+const float mars_veloc = 240;//0 a 1000
 
 float mars_ang = 0.0;
 float mars_rotate = 0.0;

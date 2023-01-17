@@ -3,9 +3,9 @@
 GLUquadricObj *obj_venus = NULL;
 GLuint idTexturevenus;
 
-const float venus_ray = 0.5;
-const float venus_distance = 3;
-const float venus_veloc = 300;//0 a 1000
+const float venus_ray = 0.3;
+const float venus_distance = 5;
+const float venus_veloc = 350;//0 a 1000
 
 float venus_ang = 0.0;
 float venus_rotate = 0.0;
