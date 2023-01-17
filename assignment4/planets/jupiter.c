@@ -3,8 +3,8 @@
 GLUquadricObj *obj_jupiter = NULL;
 GLuint idTextureJupiter;
 
-const float jupiter_tam = 1.0;
-const float jupiter_raio = 9;
+const float jupiter_ray = 1.0;
+const float jupiter_distance = 6.5;
 const float jupiter_veloc = 140;//0 a 1000
 
 float jupiter_ang = 0.0;
@@ -20,13 +20,22 @@ void initJupiter() {
     ;
 }
 
-void drawJupiter(int qualidade) {
+void drawJupiter(int quality) {
 	glPushMatrix();
 		glTranslatef(jupiter_x, 0, jupiter_y);
 		glRotatef(jupiter_rotate,0, 1, 0);
 		glRotatef(-90,1, 0, 0);
-		gluSphere(obj_jupiter, jupiter_tam, qualidade, qualidade);
+		glColor4f(1.0f, 0.5f, 0.0f, 0.0f);
+		gluSphere(obj_jupiter, jupiter_ray, quality, quality);
 	glPopMatrix();
+
+	glColor3f(1.0, 1.0, 1.0);
+	char name[] = "Jupiter";
+	glRasterPos3f(jupiter_x + jupiter_ray, 0, jupiter_y + .1);
+	int len = (int)strlen(name);
+	for(int i = 0; i < len; i++) {
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_12, name[i]);
+	}
 }
 
 void moveJupiter() {
@@ -34,12 +43,6 @@ void moveJupiter() {
 	if(jupiter_ang < -360) {
 		jupiter_ang = 0;
 	}
-	jupiter_x = jupiter_raio * cos(jupiter_ang);
-	jupiter_y = jupiter_raio * sin(jupiter_ang);
-	
-	//rotation
-	jupiter_rotate += 10.0f;
-	if(jupiter_rotate > 360.0f) {
-		jupiter_rotate = 0.0f;
-	}
+	jupiter_x = jupiter_distance * cos(jupiter_ang);
+	jupiter_y = jupiter_distance * sin(jupiter_ang);
 }

@@ -5,6 +5,6 @@
 	#include <math.h>
 
     void initSun();
-	void drawSun();
+	void drawSun(int quality);
 
 #endif

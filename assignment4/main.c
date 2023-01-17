@@ -6,51 +6,35 @@
 
 #include "planets/sun.h"
 #include "planets/jupiter.h"
-// #include "planets/mercury.h"
-// #include "planets/venus.h"
-// #include "planets/earth.h"
-// #include "planets/mars.h"
-// #include "planets/saturn.h"
-// #include "planets/uranus.h"
-// #include "planets/neptune.h"
+#include "planets/mercury.h"
+#include "planets/venus.h"
+#include "planets/earth.h"
+#include "planets/mars.h"
+#include "planets/saturn.h"
+#include "planets/uranus.h"
+#include "planets/neptune.h"
 
 const int quality = 30;
 
 float xrot = 0.0f;
 float yrot = 0.0f;
 
-float xdiff = 0.0f;
-float ydiff = 0.0f;
-
-float tra_x = 0.0f;
-float tra_y = 0.0f;
-float tra_z = -10.0f; //-10 = visao de longe
-
 int modoLuz = 1;
-
-
-GLuint carregaTextura(const char* arquivo) {
-    GLuint idTexture = SOIL_load_OGL_texture(
-                           arquivo,
-                           SOIL_LOAD_AUTO,
-                           SOIL_CREATE_NEW_ID,
-                           SOIL_FLAG_INVERT_Y
-                       );
-
-    if (idTexture == 0) {
-        printf("Erro do SOIL: '%s'\n", SOIL_last_result());
-    }
-
-    return idTexture;
-}
 
 void desenhaPlanetas() {
 	
-	glTranslatef(tra_x, tra_y, tra_z);
+	glTranslatef(0.0f, 0.0f, 0.0f);
 	glColor3f(1.0f, 1.0f, 1.0f);
 
 	drawSun(quality);
 	drawJupiter(quality);
+	drawMars(quality);
+	drawMercury(quality);
+	drawNeptune(quality);
+	drawSaturn(quality);
+	drawUranus(quality);
+	drawVenus(quality);
+	drawEarth(quality);
 }
 
 
@@ -58,14 +42,15 @@ void display(void)
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glLoadIdentity();
-
+	
+	glMatrixMode(GL_MODELVIEW);
 	gluLookAt(
-	0.0f, 0.0f, 10.0f,
+	0.0f, 15.0f, 0.01f,
 	0.0f, 0.0f, 0.0f,
 	0.0f, 1.0f, 0.0f);
 
-	glRotatef(30, 1.0f, 0.0f, 0.0f);
-	glRotatef(-15, 0.0f, 1.0f, 0.0f);
+	// glRotatef(90, 1.0f, 0.0f, 0.0f);
+	// glRotatef(-15, 0.0f, 1.0f, 0.0f);
 
 	desenhaPlanetas();
 	glutSwapBuffers();
@@ -90,17 +75,23 @@ void configuraLuz(){
         GLfloat mat_specular[] = { 1.0, 1.0, 1.0, 1.0 };
         GLfloat mat_shininess[] = { 10.0 };
         GLfloat light_position[] = { 0.1, 0.1, 0.1, 0 };
+		GLfloat white_light[] = { 1.0, 1.0, 1.0, 1.0 };
+		GLfloat lmodel_ambient[] = { 0.1, 0.1, 0.1, 1.0};
+		glClearColor(0.0, 0.0, 0.0, 0.0);
         glShadeModel (GL_SMOOTH);
 
         glMaterialfv(GL_FRONT, GL_SPECULAR, mat_specular);
         glMaterialfv(GL_FRONT, GL_SHININESS, mat_shininess);
-        glMaterialfv(GL_FRONT, GL_AMBIENT, mat_specular);
 
         glLightfv(GL_LIGHT0, GL_POSITION, light_position);
+		glLightfv(GL_LIGHT0, GL_DIFFUSE, white_light);
+		glLightfv(GL_LIGHT0, GL_SPECULAR, white_light);
+		glLightModelfv(GL_LIGHT_MODEL_AMBIENT, lmodel_ambient);
 
         glEnable(GL_LIGHTING);
         glEnable(GL_LIGHT0);
         glEnable(GL_DEPTH_TEST);
+		glEnable(GL_COLOR_MATERIAL);
     }  else {
         glDisable(GL_LIGHTING);
         glDisable(GL_LIGHT0);
@@ -110,6 +101,13 @@ void configuraLuz(){
 
 void moveItems() {
     moveJupiter();
+	moveMars();
+	moveMercury();
+	moveNeptune();
+	moveSaturn();
+	moveUranus();
+	moveVenus();
+	moveEarth();
 	
 	configuraLuz();
 	glutPostRedisplay();
@@ -130,6 +128,13 @@ int main(int argc, char *argv[])
 	
 	initSun();
 	initJupiter();
+	initMars();
+	initMercury();
+	initNeptune();
+	initSaturn();
+	initUranus();
+	initVenus();
+	initEarth();
 
 	glutDisplayFunc(display);
 	glutReshapeFunc(resize);

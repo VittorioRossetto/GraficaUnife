@@ -1,3 +1,3 @@
 
-main: main.c planets/sun.c planets/jupiter.c
-	gcc -o main main.c planets/sun.c planets/jupiter.c -lGL -lGLU -lglut -lGLEW -lSOIL -lm
+main: main.c planets/*.c
+	gcc -o main main.c planets/*.c -lGL -lGLU -lglut -lGLEW -lSOIL -lm
