@@ -2,20 +2,21 @@
  * This is a simple program that draws NLINES lines and computes
  * FPS (frames per second) by means of a circular buffer
  * Antonino Casile
+ * 
+ * Vittorio Rossetto
  * Class: Computer Graphics
  */
 
 #include <GL/glut.h>
-//#include <numeric>
 #include <unistd.h>
 #include <time.h>
 #include <stdio.h>
 
-// Number of elements in the circular buffer
+// dimensione circular buffer
 #define NELS    10
 
-// Number of lines
-#define NLINES  1000
+// al variare di NLINES variano il numero di linne a mettere a video.
+#define NLINES  10000
 
 // circular buffer used to compute frame rate
 float circularBuffer[NELS];
@@ -105,15 +106,17 @@ void display(void)
     for (currLineInd = 0; currLineInd<NLINES; currLineInd++) {
         // draw line
         glBegin(GL_LINES);
-        //Perspective projection function
         // random color
         glColor3f((float)rand()/RAND_MAX, (float)rand()/RAND_MAX, (float)rand()/RAND_MAX);
         // random first point
-        glVertex2f((float)rand()/RAND_MAX, (float)rand()/RAND_MAX);
+
+        // aggiungo la coordianta z, passo cosi da 2d a 3d, in quanto ora uso glFrustum
+
+        glVertex3f((float)rand()/RAND_MAX, (float)rand()/RAND_MAX, -2.0);
         // random color
         glColor3f((float)rand()/RAND_MAX, (float)rand()/RAND_MAX, (float)rand()/RAND_MAX);
         // random second point
-        glVertex2f((float)rand()/RAND_MAX, (float)rand()/RAND_MAX);
+        glVertex3f((float)rand()/RAND_MAX, (float)rand()/RAND_MAX, -2.0);
         glEnd();
     }
 
@@ -130,9 +133,8 @@ void init (void)
     // select clearing color
     glClearColor (0.0, 0.0, 0.0, 0.0);
 
-    // Orthographic projection
-    glFrustum(-1.0, 1.0, -1.0, 1.0, 1000.0, 0.0);
-    //glOrtho(0.0, 1.0, 0.0, 1.0, -1.0, 1.0);
+    // Frustum
+    glFrustum(0.0, 5.0, 0.0, 5.0, 10.0, 1.5);
 }
 
 // Window size and mode

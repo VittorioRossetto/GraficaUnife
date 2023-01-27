@@ -1,7 +1,6 @@
 #include "jupiter.h"
 
 GLUquadricObj *obj_jupiter = NULL;
-GLuint idTextureJupiter;
 
 const float jupiter_ray = 1.4;
 const float jupiter_distance = 11.5;
