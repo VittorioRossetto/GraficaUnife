@@ -3,8 +3,10 @@
  * FPS (frames per second) by means of a circular buffer
  * Antonino Casile
  * 
- * Vittorio Rossetto
- * Class: Computer Graphics
+ * Assignment 1: Perspective
+ * Vittorio Rossetto 159213
+ * 
+ * Modify the program to have a certain view with the use of glFrustum
  */
 
 #include <GL/glut.h>

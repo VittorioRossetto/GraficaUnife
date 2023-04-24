@@ -1,5 +1,8 @@
 /*
-* Draw a cube ... triangles
+    Assignment 3: Four faces cube with a hole in the center
+    Vittorio Rossetto 159213
+
+    Displaying a 4 faces cube with a hole in the center with the use of GL_TRIANGLES directives
 */
 #include <GL/glut.h>
 

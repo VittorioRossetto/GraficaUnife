@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "hemisphere.h": "c",
+        "glew.h": "c",
+        "shader.h": "c"
+    }
+}

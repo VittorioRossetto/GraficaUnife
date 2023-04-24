@@ -1,3 +1,10 @@
+/*
+    Assignment 3: Four faces cube with a hole in the center
+    Vittorio Rossetto 159213
+
+    Displaying a 4 faces cube with a hole in the center with the use of drawArrays with VBOs
+*/
+
 #include <GL/glew.h>
 #include <GL/glut.h>
 #include <stdio.h>

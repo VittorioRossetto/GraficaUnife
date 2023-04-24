@@ -1,6 +1,9 @@
 /*
-    VITTORIO ROSSETTO
-    159213
+    Assignment 2: Graph
+    Vittorio Rossetto 159213
+
+    Displaying a graph showing fps variation on number of displayed lines
+    variation
 */
 
 #include <GL/glut.h>
