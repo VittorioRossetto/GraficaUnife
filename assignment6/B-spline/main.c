@@ -1,7 +1,6 @@
 /*
-    VITTORIO ROSSETTO
-    159213
-	Assignment 6 computer graphics: curva interpolante
+	Assignment 6: Curva B-spline
+    Vittorio Rossetto 159213
 */
 
 // utilizzare export MESA_GL_VERSION_OVERRIDE=4.5
@@ -47,7 +46,7 @@ static float Minterpolante[4][4] =
 // Initialization routine.
 void setup(void)
 {
-    glClearColor(0.0, 0.0, 0.0, 0.0);
+    glClearColor(1.0, 1.0, 1.0, 0.0);
 }
 
 void NuoviControlPoints(void)
@@ -91,7 +90,7 @@ void drawScene(void)
     if (askOrder == 1)
         // First screen.
     {
-        glColor3f(1.0, 1.0, 1.0);
+        glColor3f(0.0, 0.0, 0.0);
         glRasterPos3f(-25.0, 0.0, 0.0);
         writeBitmapString((void*)font, "Show Bezier curve of order: ");
 

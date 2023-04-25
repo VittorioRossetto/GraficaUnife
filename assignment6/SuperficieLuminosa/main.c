@@ -1,8 +1,8 @@
 /*
-    VITTORIO ROSSETTO
-    159213
+    Vittorio Rossetto 159213
 	Assignment 6 computer graphics: Superfice di bezier
 */
+
 // usare export MESA_GL_VERSION_OVERRIDE=4.5 in caso di GLXBadFBConfig
 
 #include <GL/glew.h>
@@ -59,7 +59,7 @@ void writeStrokeString(void *font, char *string)
 // Initialization routine.
 void setup(void)
 {
-    glClearColor(0.0, 0.0, 0.0, 0.0);
+    glClearColor(1.0, 1.0, 1.0, 0.0);
 }
 
 // Drawing routine.
@@ -108,9 +108,7 @@ void drawScene(void)
    glEnd();
 
    // Specify and enable the Bezier surface.
-   // Definisco l'evaluetor creando la struttura dati
    glMap2f(GL_MAP2_VERTEX_3, 0, 1, 3, 4, 0, 1, 12, 6, controlPoints[0][0]);
-   // Attivo la struttura dati
    glEnable(GL_MAP2_VERTEX_3);
 
    // Assegno un materiale alla superficie e la disegno

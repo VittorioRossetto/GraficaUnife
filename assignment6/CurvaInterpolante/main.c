@@ -1,9 +1,10 @@
 /*
-    VITTORIO ROSSETTO
-    159213
-	Assignment 6 computer graphics: curva interpolante
+    Vittorio Rossetto 159213
+	Assignment 6: Curva Interpolante
 */
-// usare export MESA_GL_VERSION_OVERRIDE=4.5 in caso di GLXBadFBConfig
+
+// usare export MESA_GL_VERSION_OVERRIDE=4.5
+// in caso di GLXBadFBConfig
 
 #include <GL/glew.h>
 #include <GL/freeglut.h>
@@ -43,7 +44,7 @@ static float Minterpolante[4][4] =
 // Initialization routine.
 void setup(void)
 {
-    glClearColor(0.0, 0.0, 0.0, 0.0);
+    glClearColor(1.0, 1.0, 1.0, 0.0);
 }
 void NuoviControlPoints(void)
 {
@@ -81,13 +82,13 @@ void writeBitmapString(void *font, char *string)
 void drawScene(void)
 {
     glClear(GL_COLOR_BUFFER_BIT);
-    glColor3f(0.0, 0.0, 0.0);
+    glColor3f(1.0, 1.0, 1.0);
 
     if (askOrder == 1)
         // First screen.
     {
         // mostro scrtta la descrizione finchè l'utente non preme invio
-        glColor3f(1.0, 1.0, 1.0);
+        glColor3f(0.0, 0.0, 0.0);
         glRasterPos3f(-25.0, 0.0, 0.0);
         writeBitmapString((void*)font, "Show Bezier curve of order: ");
 
