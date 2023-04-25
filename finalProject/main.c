@@ -38,7 +38,7 @@ static const Light light0 =
     (vec4){0.0, 0.0, 0.0, 1.0},
     (vec4){1.0, 1.0, 1.0, 1.0},
     (vec4){1.0, 1.0, 1.0, 1.0},
-    (vec4){0.0, 1.5, 3.0, 0.0}
+    (vec4){0.0, 1.0, 2.0, 0.0}
 };
 
 // Global ambient.
@@ -102,6 +102,7 @@ titleTexLoc,
 vao[4],
 buffer[7],
 texture[4],
+score[] = {0, 0},
 height;
 
 // Variables for game mechanichs
@@ -147,7 +148,7 @@ void setup(void) {
     // Initialize cylinders, hemisphere and title screen
     fillCylinder(cylVertices1, cylIndices1, cylCounts1, cylOffsets1);
     fillCylinder(cylVertices2, cylIndices2, cylCounts2, cylOffsets2);
-    fillHemisphere(hemVertices, hemIndices, hemCounts, hemOffsets/*, raggio*/);
+    fillHemisphere(hemVertices, hemIndices, hemCounts, hemOffsets);
     scritta(titleVertices);
 
     // Create VAOs and VBOs...
@@ -502,6 +503,13 @@ void scored(int scorer) {
     //Resetting Paddles
     cyl1Position[0] = 0;
     cyl2Position[0] = 0; 
+
+    if(scorer == 1)
+        score[0]++;
+    else if(scorer == 2)
+        score[1]++;
+
+    printf("\nScore: %d - %d", score[0], score[1]);
 }
 
 int main(int argc, char** argv) {
