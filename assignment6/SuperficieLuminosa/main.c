@@ -59,7 +59,7 @@ void writeStrokeString(void *font, char *string)
 // Initialization routine.
 void setup(void)
 {
-    glClearColor(1.0, 1.0, 1.0, 0.0);
+    glClearColor(0.0, 0.0, 0.0, 0.0);
 }
 
 // Drawing routine.

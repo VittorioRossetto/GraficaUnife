@@ -134,14 +134,14 @@ Vertex Verticessa[4];
 
 // Defining ray for each planet
 float raggiosole=11.0;
-float raggioterra=0.8;
-float raggiomercurio=0.6;
-float raggiovenere=0.8;
-float raggiomarte=0.5;
-float raggiogiove=6.0;
-float raggiosaturno=4.8;
-float raggiourano=1.5;
-float raggionettuno=1.4;
+float raggioterra=0.3;
+float raggiomercurio=0.2;
+float raggiovenere=0.3;
+float raggiomarte=0.15;
+float raggiogiove=1.4;
+float raggiosaturno=1.2;
+float raggiourano=0.5;
+float raggionettuno=0.5;
 
 static unsigned int
 programId,

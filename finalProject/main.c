@@ -416,19 +416,23 @@ void keyInput(unsigned char key, int x, int y) {
 
         //Player 1 controllers
         case 'a':
-            cyl1Position[0] += paddleSpeed;
+            if(cyl1Position[0] < 6)
+                cyl1Position[0] += paddleSpeed;
             break;
 
         case 'd':
-            cyl1Position[0] -= paddleSpeed;
+            if(cyl1Position[0] > -6)
+                cyl1Position[0] -= paddleSpeed;
             break;
             
         //Making sure controls could work even with caps-lock
         case 'A':
-            cyl1Position[0] += paddleSpeed;
+            if(cyl1Position[0] < 6)
+                cyl1Position[0] += paddleSpeed;
             break;
         case 'D':
-            cyl1Position[0] -= paddleSpeed;
+            if(cyl1Position[0] > -6)
+                cyl1Position[0] -= paddleSpeed;
             break;
 
         default:
@@ -440,10 +444,12 @@ void keyInput(unsigned char key, int x, int y) {
 void special_keypress(int key, int x, int y) {
 	switch (key) {
 		case GLUT_KEY_LEFT:
-			cyl2Position[0] += paddleSpeed;
+            if(cyl2Position[0] < 6)
+			    cyl2Position[0] += paddleSpeed;
 			break;
 		case GLUT_KEY_RIGHT:
-			cyl2Position[0] -= paddleSpeed;
+            if(cyl2Position[0] > -6)
+			    cyl2Position[0] -= paddleSpeed;
 			break;
 		default:
 			break;
