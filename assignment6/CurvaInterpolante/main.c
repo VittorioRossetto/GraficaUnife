@@ -125,7 +125,7 @@ void drawScene(void)
         glEnable(GL_MAP1_VERTEX_3);
 
         // Draw the Bezier curve by defining a sample grid and evaluating on it.
-        glColor3f(1.0, 1.0, 1.0);
+        glColor3f(0.0, 0.0, 0.0);
         glMapGrid1f(100, 0.0, 1.0);//Dico in quanti punti partizionare il mio intervallo, in questo caso 100
         glEvalMesh1(GL_LINE, 0, 100);// Definisco quali e quanti punti mettere a video, in questo caso tutti
 

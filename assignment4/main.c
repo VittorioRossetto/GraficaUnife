@@ -31,7 +31,7 @@ float zCam = 0.001;
 float yCam = 10.0;
 
 void drawPlanets() {
-	// funzione per dsegnare tutti i pianeti,
+	// funzione per disegnare tutti i pianeti,
 	// viene chiamata ogni funzione dalle singole headers
 	glTranslatef(0.0f, 0.0f, 0.0f);
 	glColor3f(1.0f, 1.0f, 1.0f); // sfondo nero

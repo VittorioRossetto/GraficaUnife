@@ -137,6 +137,7 @@ void init (void)
 
     // Frustum
     glFrustum(0.0, 5.0, 0.0, 5.0, 10.0, 1.5);
+    //         L    R    B    T    zN    zF
 }
 
 // Window size and mode

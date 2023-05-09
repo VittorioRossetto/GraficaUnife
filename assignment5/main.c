@@ -226,7 +226,7 @@ void setup(void)
                           (void*)(sizeof(soleVertices[0].coords)+sizeof(soleVertices[0].normal)));  // passing texture coords
     glEnableVertexAttribArray(2);
 
-    // EARTH :.
+    // EARTH :
     glBindVertexArray(vao[TERRA]);
     glBindBuffer(GL_ARRAY_BUFFER, buffer[TERRA_VERTICES]);
     glBufferData(GL_ARRAY_BUFFER, sizeof(terraVertices), terraVertices, GL_STATIC_DRAW);
