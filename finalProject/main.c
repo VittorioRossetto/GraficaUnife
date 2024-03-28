@@ -2,7 +2,7 @@
     Final Project: Pong
     Vittorio Rossetto 159213
 
-    A version of the famous arcade game pong, Created 
+    A 3d version of the famous arcade game pong, Created 
     with the the use of Shaders
 */
 
